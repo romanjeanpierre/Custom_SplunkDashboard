@@ -11,16 +11,14 @@
     </ul>
 <p align="center">
        <img src="https://imgur.com/KXuOD8X.png" alt="Project Overview Image" style="width:1000px; height:auto;">
+   <img src="https://imgur.com/f4viY5R.png" alt="Project Overview Image" style="width:1000px; height:auto;">
     </p>
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <img src="https://i.imgur.com/3fz6j8i.png" alt="Fortigate Alert Count" style="width: 49%; height: auto; object-fit: cover;">
- 
-  <img src="https://i.imgur.com/onPjtUd.png" alt="Suricata Alert Count" style="width: 49%; height: auto; object-fit: cover;">
-</div>
+
 
 <h2> Project Walk-Through </h2>
 <h3> Generate Suricata Alerts Counter </h3>
 <p> Counter for real-time traffic analysis and packet logging. Command: => <code> index=* sourcetype=suricata event_type=alert alert.category!="" | stats count as Total </code> </p>
+<p> Display Alert category table in real-time. Command => <code>index=* sourcetype=suricata event_type=alert category!="" | stats count by category | sort count desc </code> </p>
 <img src="https://i.imgur.com/onPjtUd.png" height="80%" width="80%" alt="Suricata Alert Count">
 <p> Clicking on any of the below events will provide us quick access to Suricata actions and signatures</p> 
 
@@ -31,6 +29,7 @@
 </div>
 
 <h3> Generate Fortigate </h3>
-<p> Counter for Firewall policy violations and network anomalies based on the firewall rules and configurations</p>
-<p> Command => <code> index=* sourcetype=fortigate_utm level=alert attack</code></p>
+<p> Counter for Firewall policy violations and network anomalies based on the firewall rules and configurations. Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count as Total </code> </p>
+<p> Display Attack vector table in real-time. Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count by attack | sort count desc </code></p>
+
 
