@@ -46,4 +46,5 @@
 <p> Command Suricata Pie Chart => <code> index=* sourcetype="suricata" event_type=alert| stats count by severity </code></p>
 <p> Command Fortigate Pie Chart => <code> index=* sourcetype="fortigate_utm" level=alert | stats count by severity </code></p>
  <img src="https://imgur.com/rNUeZj8.png" alt="Suricate and fortigate pie chart " height="80%" width="80%">
+ <p> Hovering the mouse on the pie chart will provide statistics </p>
               
