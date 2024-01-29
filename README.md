@@ -28,7 +28,7 @@
   <img src="https://imgur.com/pALp7Tz.png" alt="Suricata Action Signature Details" style="width: 49%; height: auto; object-fit: cover;">
 </div>
 
-<h3> Generate Fortigate </h3>
+<h3> Generate Fortigate Alerts Counter </h3>
  <p> Counter for Firewall policy violations and network anomalies based on the firewall rules and configurations: </p>
   <p> Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count as Total </code> </p>
 
@@ -41,4 +41,9 @@
               <img src="https://imgur.com/lgw7C2j.png" height="80%" width="80%" alt="Details of Apache Version">
                <p> Apache Software Foundation Apache Roller prior to 5.0.2, CVE ID: CVE-2013-4212 </p>
 
+  <h3> Severity Pie Chart - Suricata & Fortigate </h3>
+ <p> A Severity Pie Chart in Splunk provides security analysts with a comprehensive visual tool for immediate assessment of alert distributions, enabling prioritization of critical threats and efficient resource allocation. It facilitates trend spotting, accelerates incident response, simplifies compliance reporting, and enhances monitoring efficiency. This visual aid also serves as an effective communication bridge with stakeholders and supports historical analysis to gauge the effectiveness of security measures. </p>
+<p> Command Suricata Pie Chart => <code> index=* sourcetype="suricata" event_type=alert| stats count by severity </code></p>
+<p> Command Fortigate Pie Chart => <code> index=* sourcetype="fortigate_utm" level=alert | stats count by severity </code></p>
+ <img src="https://imgur.com/rNUeZj8.png" alt="Suricate and fortigate pie chart " height="80%" width="80%">
               
