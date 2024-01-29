@@ -29,7 +29,16 @@
 </div>
 
 <h3> Generate Fortigate </h3>
-<p> Counter for Firewall policy violations and network anomalies based on the firewall rules and configurations. Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count as Total </code> </p>
-<p> Display Attack vector table in real-time. Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count by attack | sort count desc </code></p>
+ <p> Counter for Firewall policy violations and network anomalies based on the firewall rules and configurations: </p>
+  <p> Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count as Total </code> </p>
 
+ <p> Display Attack vector table in real-time: </p>
+   <p> Command => <code> index=* sourcetype=fortigate_utm level=alert | stats count by attack | sort count desc </code></p>
+     <img src="https://imgur.com/jY0A3Ko.png" height="80% width="80%" alt="Fortigate Alert Count">
+       <p> Clicking on any of the events we can identify the possible exploitation, i.e: "Apache.Roller.OGLN.Injection.Remote.Code.Execution" </p>
+         <img src="https://imgur.com/mRP08lZ.png" height="80%" width="80%" alt="Details of Apache Version">
+           <p> Conduct OSINT to investigate vulnerability </p>
+              <img src="https://imgur.com/lgw7C2j.png" height="80%" width="80%" alt="Details of Apache Version">
+               <p> Apache Software Foundation Apache Roller prior to 5.0.2, CVE ID: CVE-2013-4212 </p>
 
+              
